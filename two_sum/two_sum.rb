@@ -1,7 +1,18 @@
-def two_sum?(arr, target)
-
+def bad_two_sum?(arr, target)
+  i = 0
+  j = 1
+  while i < arr.length - 1
+    while j < arr.length
+      return true if arr[i] + arr[j] == target
+      j += 1
+    end
+    i += 1
+    j = i + 1
+  end
+  false
 end
 
+p bad_two_sum?([1, 2, 5, 4, 3], 7)
 
 
 
